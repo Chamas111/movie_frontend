@@ -1,10 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import Movies_Details from "./Components/Movies_Details";
 
 function App() {
   return (
     <div className="App">
-      <h1>hello</h1>
+      <Movies_Details />
     </div>
   );
 }
