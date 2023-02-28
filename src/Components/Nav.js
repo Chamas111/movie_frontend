@@ -1,3 +1,5 @@
+
+import React from 'react';
 import { Link } from "react-router-dom"
 import { Person } from "react-bootstrap-icons";
 
@@ -25,3 +27,4 @@ const Nav = () => {
 }
 
 export default Nav
+
