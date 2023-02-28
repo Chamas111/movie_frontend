@@ -11,3 +11,82 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+#header-wrap {
+  background-color: #194689;
+  padding-bottom: 20px;
+}
+
+#main-header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+ 
+}
+
+#main-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+#main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+#main-nav a:hover {
+  color: gray;
+}
+
+#main-logo {
+  height: 60px;
+  width: 80px;
+  object-fit: contain;
+}
+
+#main-btn {
+  padding: 4px 6px;
+  border-style: none;
+  border-radius: 4px;
+}
+
+#header-caption {
+  text-align: center;
+  color: #fff;
+  margin-top: 24px;
+}
+
+#search-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 36px;
+}
+
+#header-search {
+  width: 600px;
+  border-radius: 20px;
+  height: 45px;
+  border-style: none;
+  padding: 14px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.271);
+  position: absolute;
+  top: 15%;
+  transform: translateY(-15%);
+  z-index: 999;
+}
+
+#header-search-btn {
+  padding: 13px;
+  border-style: none;
+  border-radius: 50%;
+  position: absolute;
+  right: 26.1%;
+  color: #fff;
+  background-color: #3E8AFA;
+  top: 15%;
+  transform: translateY(-15%);
+}
