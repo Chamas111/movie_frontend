@@ -5,6 +5,7 @@ import Nav from './Components/Nav';
 import Home from './Components/Home';
 import Header from "./Components/Header";
 import Movies_Details from "./Components/Movies_Details";
+import Footer from "./Components/Footer";
 
 
 
@@ -14,6 +15,7 @@ function App() {
       <Nav />
       <Home />
       <Movies_Details />
+      <Footer />
     </div>
   );
 }
