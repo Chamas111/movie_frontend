@@ -20,7 +20,7 @@ code {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
- 
+  background-color: #194689;
 }
 
 #main-nav {
