@@ -1,10 +1,12 @@
+
+import React from 'react';
 import { Link } from "react-router-dom"
 import { Person } from "react-bootstrap-icons";
 
 import logo from "./logo.png"
 const Nav = () => {
   return (
-    <div id="main-header">
+    <>
     
       <img id="main-logo" src={logo} alt="logo" />
       <nav id="main-nav">
@@ -20,8 +22,9 @@ const Nav = () => {
       
     
    
-    </div>
+    </>
   )
 }
 
 export default Nav
+
