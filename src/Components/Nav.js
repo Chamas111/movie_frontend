@@ -7,7 +7,7 @@ import logo from "./logo.png"
 const Nav = () => {
   return (
     <>
-    
+     <div id='main-header'>
       <img id="main-logo" src={logo} alt="logo" />
       <nav id="main-nav">
       <Link to="/">Home</Link>
@@ -19,6 +19,7 @@ const Nav = () => {
       <Link to="/">Android APP</Link>
       </nav>
       <button id="main-btn"><Person /> Login</button>
+      </div>
       
     
    
