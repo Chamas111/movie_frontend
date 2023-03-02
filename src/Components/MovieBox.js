@@ -1,39 +1,57 @@
-import React from 'react';
-import '../anon.css';
+import { useState, useEffect } from "react";
+import React from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import "../anon.css";
 
 function MovieBox() {
+  const [movies, setMovies] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:9000/api/movies`)
+      .then((res) => setMovies(res.data))
+      .catch((e) => console.log(e));
+  }, []);
+
   return (
-    <div className='flw-item'>
-      <div className='film-poster'>
-        <div className='pick film-poster-quality'>HD</div>
-        <img
-          className='film-poster-img lazyloaded'
-          alt='movieimg'
-          src='https://via.placeholder.com/100'></img>
-        <a
-          href='#movielink'
-          title='Movie.title'
-          className='film-poster-ahref flw-item-tip'>
-          <i className='bi bi-play'></i>
-        </a>
-      </div>
-      <div className='film-detail film-detail-fix'>
-        <h3 className='film-name'>
-          <a
-            href='#movielink'
-            title='movie.title'>
-            Movie Title
-          </a>
-        </h3>
-        <div className='fd-infor'>
-          <span className='fdi-item'>year</span>
-          <span className='dot'></span>
-          <span className='fdi-item fdi-duration'>time</span>
-          <span className='float-right fdi-type'>(series/movie)</span>
-        </div>
-      </div>
-      <div className='clearfix'></div>
-    </div>
+    <>
+      {movies.map((movie) => (
+        <>
+          <div className="flw-item" key={movie.id}>
+            <div className="film-poster">
+              <div className="pick film-poster-quality">HD</div>
+              <img
+                className="film-poster-img lazyloaded"
+                alt="movieimg"
+                src={movie.url}
+              ></img>
+              <Link
+                to={`/movies/${movie.movie_id}`}
+                className="film-poster-ahref flw-item-tip"
+              >
+                <i className="bi bi-play"></i>
+              </Link>
+            </div>
+            <div className="film-detail film-detail-fix">
+              <h3 className="film-name">
+                <a href="#movielink" title="movie.title">
+                  {movie.title}
+                </a>
+              </h3>
+              <div className="fd-infor">
+                <span className="fdi-item">{movie.year}</span>
+                <span className="dot"></span>
+                <span className="fdi-item fdi-duration">
+                  {movie.duration} min
+                </span>
+                <span className="float-right fdi-type">{movie.genre}</span>
+              </div>
+            </div>
+            <div className="clearfix"></div>
+          </div>
+        </>
+      ))}
+    </>
   );
 }
 

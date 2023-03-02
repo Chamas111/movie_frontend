@@ -1,31 +1,23 @@
-
-import React from 'react';
-import { Link } from "react-router-dom"
+import React from "react";
+import { NavLink } from "react-router-dom";
 import { Person } from "react-bootstrap-icons";
 
-import logo from "./logo.png"
+import logo from "./logo.png";
 const Nav = () => {
   return (
     <>
-     <div id='main-header'>
-      <img id="main-logo" src={logo} alt="logo" />
-      <nav id="main-nav">
-      <Link to="/">Home</Link>
-      <Link to="/">Genre</Link>
-      <Link to="/">Country</Link>
-      <Link to="/">Movies</Link>
-      <Link to="/">Tv Shows</Link>
-      <Link to="/">Top IMDB</Link>
-      <Link to="/">Android APP</Link>
-      </nav>
-      <button id="main-btn"><Person /> Login</button>
+      <div id="main-header">
+        <img id="main-logo" src={logo} alt="logo" />
+        <nav id="main-nav">
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/movies/new">Add Movie</NavLink>
+        </nav>
+        <button id="main-btn">
+          <Person /> Login
+        </button>
       </div>
-      
-    
-   
     </>
-  )
-}
+  );
+};
 
-export default Nav
-
+export default Nav;

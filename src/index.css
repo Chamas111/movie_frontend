@@ -14,6 +14,7 @@ code {
 #header-wrap {
   background-color: #194689;
   padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 #main-header {
@@ -86,7 +87,7 @@ code {
   position: absolute;
   right: 26.1%;
   color: #fff;
-  background-color: #3E8AFA;
+  background-color: #3e8afa;
   top: 15%;
   transform: translateY(-15%);
 }
