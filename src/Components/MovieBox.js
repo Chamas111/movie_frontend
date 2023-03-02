@@ -8,7 +8,7 @@ function MovieBox() {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:9000/api/movies`)
+      .get(`${process.env.REACT_APP_SERVER_BASE_URL}/api/movies`)
       .then((res) => setMovies(res.data))
       .catch((e) => console.log(e));
   }, []);
