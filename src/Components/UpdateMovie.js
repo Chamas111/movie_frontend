@@ -23,7 +23,7 @@ function UpdateMovie() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
+    console.log("helpppppppppppppppppppppppp");
     setMovie({ ...movie, [name]: value });
   };
 
