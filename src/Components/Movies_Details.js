@@ -24,14 +24,24 @@ function Movies_Details() {
     movie && (
       <>
         <div className="text-start" style={{ backgroundColor: "#f3f1f1" }}>
-          <div className="row">
-            <iframe
+          <div className="container">
+            <div className="___video">
+              <iframe
+                src="https://player.vimeo.com/video/611861964?h=1fca4a83af&title=0&byline=0&portrait=0"
+                className="__video"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            {/*    <iframe
               src="https://www.youtube.com/embed/Yj2iELI6OeI?&autoplay=0&mute=0&playsinline=0&web-share=0"
               allowFullScreen
               width="560"
               height="615"
               title="trailer"
-            ></iframe>
+            ></iframe> */}
           </div>
 
           <div className="d-flex justify-content-center">
@@ -49,55 +59,61 @@ function Movies_Details() {
                       alt="movieimg"
                     />
                   </div>
-                  <div class="d-flex align-items-start flex-column mb-3 mt-5">
-                    <button
-                      type="button"
-                      className="btn"
-                      style={{
-                        backgroundColor: "#3e8afa",
-                        borderRadius: "30px",
-                        color: "#fff",
-                      }}
-                    >
-                      Watch now
-                    </button>
-
-                    <h2
-                      style={{
-                        fontFamily: "Roboto, Arial",
-                        lineHeight: "48.75px",
-                      }}
-                    >
-                      {movie?.title}
-                    </h2>
-
-                    <button className="mb-3">
-                      <img
-                        src={Trailer}
-                        style={{ width: "35px" }}
-                        alt="trailer"
-                      />
-                      Trailer
-                    </button>
-
-                    <p>
-                      At the Silver Creek boarding school for girls in the
-                      Australian outback, students are largely left to their own
-                      devices in their spare time. This series tells the
-                      gripping and unsparing story of how the desire to belong
-                      sets in motion a cruel dynamic.
-                    </p>
-                    <div class="container text-start">
-                      <div class="row">
-                        <div class="col">Released: {movie.year}</div>
-                        <div class="col">Genre: {movie.genre}</div>
-                      </div>
+                  <div>
+                    <div class="mt-2">
+                      <button
+                        type="button"
+                        className="btn"
+                        style={{
+                          backgroundColor: "#3e8afa",
+                          borderRadius: "30px",
+                          color: "#fff",
+                        }}
+                      >
+                        Watch now
+                      </button>
                     </div>
+                    <div className="d-md-flex align-items-start flex-column mb-3 mt-5 g-row-3">
+                      <h2
+                        style={{
+                          fontFamily: "Roboto, Arial",
+                          lineHeight: "48.75px",
+                        }}
+                      >
+                        {movie?.title}
+                      </h2>
 
-                    <div class="container text-start">
-                      <div class="row">
-                        <div class="col">Duration: {movie.duration} min</div>
-                        <div class="col">Country: {movie.country}</div>
+                      <button className="mb-3">
+                        <i class="bi bi-camera-reels">
+                          <strong>&nbsp;Trailer</strong>
+                        </i>
+                      </button>
+
+                      <p>
+                        At the Silver Creek boarding school for girls in the
+                        Australian outback, students are largely left to their
+                        own devices in their spare time. This series tells the
+                        gripping and unsparing story of how the desire to belong
+                        sets in motion a cruel dynamic.
+                      </p>
+                      <div class="container">
+                        <div class="row">
+                          <div class="col text-start">
+                            Released: {movie.year}
+                          </div>
+                          <div class="col text-start">Genre: {movie.genre}</div>
+                        </div>
+                      </div>
+
+                      <div class="container">
+                        <div class="row ">
+                          <div class="col text-start">
+                            Duration: {movie.duration} min
+                          </div>
+                          <div class="col text-start">
+                            Country: {movie.country}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -116,21 +132,6 @@ function Movies_Details() {
             </button>
           </div>
         </div>
-
-        {/*       <div className="container d-flex ">
-        <div className="video-background">
-          <div className="video-foreground">
-            <iframe
-              src="https://www.youtube.com/embed/Yj2iELI6OeI?&autoplay=1&mute=0&playsinline=0&web-share=0"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-
-        <div className="container">
-          <h1>hellofdfdf</h1>
-        </div>
-      </div> */}
       </>
     )
   );
