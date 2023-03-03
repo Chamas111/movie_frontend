@@ -11,6 +11,7 @@ const Nav = () => {
         <nav id="main-nav">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/movies/new">Add Movie</NavLink>
+          <NavLink to="/contact">Contact us</NavLink>
         </nav>
         <button id="main-btn">
           <Person /> Login
