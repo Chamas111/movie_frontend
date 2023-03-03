@@ -44,7 +44,9 @@ function MovieBox() {
                 <span className="fdi-item fdi-duration">
                   {movie.duration} min
                 </span>
-                <span className="float-right fdi-type">
+              </div>
+              <div className="fd-infor">
+                <span className="text-start fdi-type">
                   {movie.genre.replace(/[^\w\s,]/gi, "")}
                 </span>
               </div>
