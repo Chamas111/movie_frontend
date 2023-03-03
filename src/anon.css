@@ -15,7 +15,7 @@ body {
   -webkit-text-size-adjust: none;
 }
 a {
-  color: #111;
+  color: white;
   text-decoration: none !important;
   outline: 0;
   -moz-outline: none;
@@ -205,7 +205,7 @@ a:hover {
   color: #fff;
 }
 #header_menu ul.header_menu-list .nav-item.active > a:before {
-  content: '';
+  content: "";
   width: 100%;
   height: 3px;
   background: #3e8afa;
@@ -684,7 +684,7 @@ a:hover {
   display: inline-block;
 }
 .flw-item .film-poster .film-poster-ahref:after {
-  content: '';
+  content: "";
   position: absolute;
   top: auto;
   right: 0;
@@ -696,7 +696,7 @@ a:hover {
   z-index: 1;
 }
 .flw-item .film-poster .film-poster-ahref:before {
-  content: '';
+  content: "";
   width: 60px;
   height: 60px;
   margin-top: -30px;
@@ -1203,7 +1203,7 @@ a:hover {
   position: relative;
 }
 #footer .footer-notice span:before {
-  content: '';
+  content: "";
   width: 10px;
   height: 10px;
   position: absolute;
@@ -1242,7 +1242,7 @@ a:hover {
   z-index: 1;
 }
 .detail_page.detail_page-style .cover_follow:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -1461,10 +1461,10 @@ a:hover {
   color: #ccc !important;
 }
 #turn-off-light:after {
-  content: 'Turn off light';
+  content: "Turn off light";
 }
 #turn-off-light.active:after {
-  content: 'Turn on light';
+  content: "Turn on light";
 }
 #turn-off-light.active {
   position: relative;
@@ -1923,7 +1923,7 @@ a:hover {
   font-weight: 500;
 }
 .detail_page-servers .dp-s-line .nav .nav-item .nav-link span:before {
-  content: 'Server';
+  content: "Server";
   position: absolute;
   top: 10px;
   font-weight: 400;
@@ -2388,13 +2388,13 @@ a:hover {
     line-height: 1em;
   }
   .text-home .btn-expand span:before {
-    content: 'more';
+    content: "more";
   }
   .text-home.thm-expand .btn-expand span:before {
-    content: 'less';
+    content: "less";
   }
   .text-home.thm-expand .btn-expand i:before {
-    content: '\f068';
+    content: "\f068";
   }
   .text-home .btn-expand:hover {
     background: #fff !important;

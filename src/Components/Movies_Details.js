@@ -101,7 +101,9 @@ function Movies_Details() {
                           <div class="col text-start">
                             Released: {movie.year}
                           </div>
-                          <div class="col text-start">Genre: {movie.genre}</div>
+                          <div class="col text-start">
+                            Genre: {movie.genre.replace(/[^\w\s,]/gi, "")}
+                          </div>
                         </div>
                       </div>
 
