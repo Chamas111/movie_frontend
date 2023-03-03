@@ -93,7 +93,7 @@ function AddMovie() {
 
           <div class="item">
             <p>
-              Duraction<span class="required">*</span>
+              Duration<span class="required">*</span>
             </p>
             <input
               type="int"

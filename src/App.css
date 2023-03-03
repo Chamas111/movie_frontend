@@ -50,7 +50,7 @@ body {
   }
 }
 
-.ccontainer {
+.container {
   width: 100%;
   margin-top: 3rem;
   display: flex;
@@ -262,7 +262,8 @@ body {
   border-radius: 3px;
 }
 .float-right {
-  float: right !important;
+  float: right;
+  padding-top: 2rem;
 }
 .clearfix::after {
   display: block;
