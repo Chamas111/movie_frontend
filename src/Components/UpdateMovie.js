@@ -27,17 +27,12 @@ function UpdateMovie() {
     setMovie({ ...movie, [name]: value });
   };
 
-  /*   const handleCheckbox = (e) => {
+  const handleCheckbox = (e) => {
     const { value, checked } = e.target;
-    console.log(checkedValue);
-    if (checked) {
-      setCheckedValue((pre) => [...pre, value]);
-    } else {
-      setCheckedValue((pre) => {
-        return [...pre.filter((skill) => skill === value)];
-      });
-    }
-  }; */
+    const newGenres = checked ? [...movie.genre, value] : movie.genre.filter(g => g !== value);
+    setMovie({ ...movie, genre: newGenres });
+  };
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -137,8 +132,9 @@ function UpdateMovie() {
               <div>
                 <input
                   type="checkbox"
+                  checked={movie.genre.includes("Drama")}
                   value={movie.genre}
-                  onChange={handleChange}
+                  onChange={handleCheckbox}
                   id="check_1"
                   name="Drama"
                 />
@@ -149,8 +145,9 @@ function UpdateMovie() {
               <div>
                 <input
                   type="checkbox"
+                  checked={movie.genre.includes("Horror")}
                   value={movie.genre}
-                  onChange={handleChange}
+                  onChange={handleCheckbox}
                   id="check_2"
                   name="Horror"
                 />
@@ -161,8 +158,9 @@ function UpdateMovie() {
               <div>
                 <input
                   type="checkbox"
+                  checked={movie.genre.includes("Crime")}
                   value={movie.genre}
-                  onChange={handleChange}
+                  onChange={handleCheckbox}
                   id="check_3"
                   name="Crime"
                 />
@@ -173,8 +171,9 @@ function UpdateMovie() {
               <div>
                 <input
                   type="checkbox"
+                  checked={movie.genre.includes("Fantasy")}
                   value={movie.genre}
-                  onChange={handleChange}
+                  onChange={handleCheckbox}
                   id="check_4"
                   name="Fantasy"
                 />
@@ -185,8 +184,9 @@ function UpdateMovie() {
               <div>
                 <input
                   type="checkbox"
+                  checked={movie.genre.includes("Action")}
                   value={movie.genre}
-                  onChange={handleChange}
+                  onChange={handleCheckbox}
                   id="check_5"
                   name="Action"
                 />
@@ -198,7 +198,8 @@ function UpdateMovie() {
                 <input
                   type="checkbox"
                   value={movie.genre}
-                  onChange={handleChange}
+                  checked={movie.genre.includes("War")}
+                  onChange={handleCheckbox}
                   id="check_6"
                   name="War"
                 />
@@ -209,8 +210,9 @@ function UpdateMovie() {
               <div>
                 <input
                   type="checkbox"
+                  checked={movie.genre.includes("Romance")}
                   value={movie.genre}
-                  onChange={handleChange}
+                  onChange={handleCheckbox}
                   id="check_7"
                   name="Romance"
                 />
@@ -222,7 +224,8 @@ function UpdateMovie() {
                 <input
                   type="checkbox"
                   value={movie.genre}
-                  onChange={handleChange}
+                  checked={movie.genre.includes("Animation")}
+                  onChange={handleCheckbox}
                   id="check_8"
                   name="Animation"
                 />
