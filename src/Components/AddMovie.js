@@ -14,13 +14,12 @@ function AddMovie() {
   const [duration, setDuration] = useState();
 
   const handleChange = (e) => {
+    const value = e.target.value;
     const checked = e.target.checked;
-    console.log(checked);
-    const value = e.target;
 
-    /*  if (checked) {
+    if (checked) {
       setGenre([...genre, value]);
-    } */
+    }
   };
 
   const handleSubmit = (e) => {
