@@ -13,7 +13,7 @@ const Nav = () => {
           <NavLink to="/movies/new">Add Movie</NavLink>
           <NavLink to="/contact">Contact us</NavLink>
         </nav>
-        <button id="main-btn">
+        <button className="btn btn-outline-success text-white border-white">
           <Person /> Login
         </button>
       </div>
