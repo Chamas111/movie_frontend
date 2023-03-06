@@ -7,10 +7,13 @@ import { Link } from 'react-router-dom';
 import Newrelease from './Newrelease';
 import Classics from './Classics';
 import Kids from './Kids';
+import MovieBox from './MovieBox';
+import FilterMovie from './FilterMovie';
 
 function Home() {
   const [movies, setMovies] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [filterText, setFilterText] = useState('');
 
   useEffect(() => {
     axios
@@ -18,6 +21,13 @@ function Home() {
       .then((res) => setMovies(res.data))
       .catch((e) => console.log(e));
   }, []);
+
+  const filteredMovies =
+    searchQuery.length > 0
+      ? movies.filter((movie) =>
+          movie.title.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+      : movies;
 
   const handleSearch = () => {
     axios
@@ -28,14 +38,9 @@ function Home() {
       .catch((e) => console.log(e));
   };
 
-  const filteredMovies =
-    searchQuery.length > 0
-      ? movies
-          .filter((movie) =>
-            movie.title.toLowerCase().includes(searchQuery.toLowerCase())
-          )
-          .slice(0, 24)
-      : movies.slice(0, 24);
+  function onFilterValue(filterValue) {
+    setFilterText(filterValue);
+  }
 
   return (
     <>
@@ -49,10 +54,21 @@ function Home() {
           />
         </div>
       </div>
-      {filteredMovies?.length > 0 && (
-        <div className='film_list film_list-grid'>
-          <div className='film_list-wrap'>
-            {filteredMovies.map((movie) => (
+      <div className='filterbox'>
+        <p>Filter Movie genre:</p>
+        <FilterMovie filterValueSelected={onFilterValue} />
+      </div>
+      <div className='film_list film_list-grid'>
+        <div className='film_list-wrap'>
+          {filteredMovies
+            .filter((movie) =>
+              filterText === 'All' ? (
+                <MovieBox />
+              ) : (
+                movie.genre.toLowerCase().includes(filterText.toLowerCase())
+              )
+            )
+            .map((movie) => (
               <div
                 className='flw-item'
                 key={movie.id}>
@@ -92,9 +108,9 @@ function Home() {
                 <div className='clearfix'></div>
               </div>
             ))}
-          </div>
         </div>
-      )}
+      </div>
+
       <Newrelease />
       <Classics />
       <Kids />

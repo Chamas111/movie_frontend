@@ -13,15 +13,6 @@ function AddMovie() {
   const [country, setCountry] = useState('');
   const [duration, setDuration] = useState();
 
-  const handleChange = (e) => {
-    const value = e.target.value;
-    const checked = e.target.checked;
-
-    if (checked) {
-      setGenre([...genre, value]);
-    }
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(genre);
@@ -42,9 +33,7 @@ function AddMovie() {
     <div>
       <div class='testbox'>
         <form onSubmit={handleSubmit}>
-          <div class='banner'>
-            <h1>Add Movie Form</h1>
-          </div>
+          <div class='banner'></div>
           <div class='item'>
             <p>
               Movie title<span class='required'>*</span>
@@ -117,133 +106,17 @@ function AddMovie() {
             />
           </div>
 
-          <div class='question'>
+          <div class='item'>
             <p>
               Movie genre:<span class='required'>*</span>
             </p>
-
-            <div class='question-answer checkbox-item'>
-              <div>
-                <input
-                  type='checkbox'
-                  value='Drama'
-                  htmlFor=''
-                  onChange={handleChange}
-                  id='check_1'
-                  name='checklist'
-                />
-                <label
-                  for='check_1'
-                  class='check'>
-                  <span>Drama</span>
-                </label>
-              </div>
-              <div>
-                <input
-                  type='checkbox'
-                  value='Horror'
-                  htmlFor=''
-                  onChange={handleChange}
-                  id='check_2'
-                  name='checklist'
-                />
-                <label
-                  for='check_2'
-                  class='check'>
-                  <span>Horror</span>
-                </label>
-              </div>
-              <div>
-                <input
-                  type='checkbox'
-                  value='Crime'
-                  htmlFor=''
-                  onChange={handleChange}
-                  id='check_3'
-                  name='checklist'
-                />
-                <label
-                  for='check_3'
-                  class='check'>
-                  <span>Crime</span>
-                </label>
-              </div>
-              <div>
-                <input
-                  type='checkbox'
-                  value='Fantasy'
-                  htmlFor=''
-                  onChange={handleChange}
-                  id='check_4'
-                  name='checklist'
-                />
-                <label
-                  for='check_4'
-                  class='check'>
-                  <span>Fantasy</span>
-                </label>
-              </div>
-              <div>
-                <input
-                  type='checkbox'
-                  value='Action'
-                  htmlFor=''
-                  onChange={handleChange}
-                  id='check_5'
-                  name='checklist'
-                />
-                <label
-                  for='check_5'
-                  class='check'>
-                  <span>Action</span>
-                </label>
-              </div>
-              <div>
-                <input
-                  type='checkbox'
-                  value='War'
-                  htmlFor=''
-                  onChange={handleChange}
-                  id='check_6'
-                  name='checklist'
-                />
-                <label
-                  for='check_6'
-                  class='check'>
-                  <span>War</span>
-                </label>
-              </div>
-              <div>
-                <input
-                  type='checkbox'
-                  value='Romance'
-                  htmlFor=''
-                  onChange={handleChange}
-                  id='check_7'
-                  name='checklist'
-                />
-                <label
-                  for='check_7'
-                  class='check'>
-                  <span>Romance</span>
-                </label>
-              </div>
-              <div>
-                <input
-                  type='checkbox'
-                  value='Animation'
-                  htmlFor=''
-                  onChange={handleChange}
-                  id='check_8'
-                  name='checklist'
-                />
-                <label
-                  for='check_8'
-                  class='check'>
-                  <span>Animation</span>
-                </label>
-              </div>
-            </div>
+            <input
+              type='text'
+              name='name'
+              value={genre}
+              onChange={(e) => setGenre(e.target.value)}
+              placeholder='Movie Genre ex: Drama, Horror...'
+            />
           </div>
           <br />
 

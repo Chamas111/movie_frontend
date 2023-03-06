@@ -27,18 +27,6 @@ function UpdateMovie() {
     setMovie({ ...movie, [name]: value });
   };
 
-  const handleCheckbox = (e) => {
-    const { value, checked } = e.target;
-    const newGenres = checked
-      ? [...movie.genre, value]
-      : movie.genre.filter((g) => g !== value);
-
-    setMovie((prevState) => ({
-      ...prevState,
-      genre: newGenres,
-    }));
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
@@ -53,9 +41,7 @@ function UpdateMovie() {
     <div>
       <div class='testbox'>
         <form onSubmit={handleSubmit}>
-          <div class='banner'>
-            <h1>Add Movie Form</h1>
-          </div>
+          <div class='banner1'></div>
           <div class='item'>
             <p>
               Movie title<span class='required'>*</span>
@@ -128,133 +114,17 @@ function UpdateMovie() {
             />
           </div>
 
-          <div class='question'>
+          <div class='item'>
             <p>
               Movie genre:<span class='required'>*</span>
             </p>
-
-            <div class='question-answer checkbox-item'>
-              <div>
-                <input
-                  type='checkbox'
-                  checked={movie.genre.includes('Drama')}
-                  value='Drama'
-                  onChange={handleCheckbox}
-                  id='check_1'
-                  name='Drama'
-                />
-                <label
-                  for='check_1'
-                  class='check'>
-                  <span>Drama</span>
-                </label>
-              </div>
-              <div>
-                <input
-                  type='checkbox'
-                  checked={movie.genre.includes('Horror')}
-                  value='Horror'
-                  onChange={handleCheckbox}
-                  id='check_2'
-                  name='Horror'
-                />
-                <label
-                  for='check_2'
-                  class='check'>
-                  <span>Horror</span>
-                </label>
-              </div>
-              <div>
-                <input
-                  type='checkbox'
-                  checked={movie.genre.includes('Crime')}
-                  value='Crime'
-                  onChange={handleCheckbox}
-                  id='check_3'
-                  name='Crime'
-                />
-                <label
-                  for='check_3'
-                  class='check'>
-                  <span>Crime</span>
-                </label>
-              </div>
-              <div>
-                <input
-                  type='checkbox'
-                  checked={movie.genre.includes('Fantasy')}
-                  value='Fantasy'
-                  onChange={handleCheckbox}
-                  id='check_4'
-                  name='Fantasy'
-                />
-                <label
-                  for='check_4'
-                  class='check'>
-                  <span>Fantasy</span>
-                </label>
-              </div>
-              <div>
-                <input
-                  type='checkbox'
-                  checked={movie.genre.includes('Action')}
-                  value='Action'
-                  onChange={handleCheckbox}
-                  id='check_5'
-                  name='Action'
-                />
-                <label
-                  for='check_5'
-                  class='check'>
-                  <span>Action</span>
-                </label>
-              </div>
-              <div>
-                <input
-                  type='checkbox'
-                  value='War'
-                  checked={movie.genre.includes('War')}
-                  onChange={handleCheckbox}
-                  id='check_6'
-                  name='War'
-                />
-                <label
-                  for='check_6'
-                  class='check'>
-                  <span>War</span>
-                </label>
-              </div>
-              <div>
-                <input
-                  type='checkbox'
-                  checked={movie.genre.includes('Romance')}
-                  value='Romance'
-                  onChange={handleCheckbox}
-                  id='check_7'
-                  name='Romance'
-                />
-                <label
-                  for='check_7'
-                  class='check'>
-                  <span>Romance</span>
-                </label>
-              </div>
-              <div>
-                <input
-                  type='checkbox'
-                  value='Animation'
-                  checked={movie.genre.includes('Animation')}
-                  onChange={handleCheckbox}
-                  id='check_8'
-                  name='Animation'
-                />
-                <label
-                  for='check_8'
-                  class='check'>
-                  <span>Animation</span>
-                </label>
-              </div>
-            </div>
+            <input
+              type='text'
+              name='genre'
+              value={movie.genre.replace(/[^\w\s,]/gi, '')}
+              onChange={handleChange}
+              placeholder='Movie Genric ex: Drama, Horror...'
+            />
           </div>
           <br />
 

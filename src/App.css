@@ -103,7 +103,7 @@ body {
 }
 
 .movie-card div:nth-of-type(3) span {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   text-transform: uppercase;
   font-size: 13px;
   letter-spacing: 2px;
@@ -113,7 +113,7 @@ body {
 
 .movie-card div:nth-of-type(3) h3 {
   margin-top: 3px;
-  font-family: "Roboto Slab", serif;
+  font-family: 'Roboto Slab', serif;
   color: #f9d3b4;
   font-size: 15px;
 }
@@ -155,6 +155,41 @@ body {
   }
 }
 
+.filterbox {
+  align-items: flex-start;
+  display: flex;
+  padding-left: 1%;
+  padding-top: 40px;
+  margin-bottom: -5%;
+  padding-bottom: -30px;
+}
+
+.filterbox p {
+  color: red;
+  padding: 0.5rem;
+  font-weight: bold;
+  padding-left: 5rem;
+}
+@media (max-width: 600px) {
+  .filterbox {
+    align-items: flex-start;
+    display: inline-block;
+    align-items: center;
+    padding-left: 0.5%;
+    padding-top: 40px;
+    margin-bottom: -5%;
+    padding-bottom: -30px;
+  }
+
+  .filterbox p {
+    color: red;
+    padding: 0.25rem;
+    font-weight: bold;
+
+    text-align: center;
+  }
+}
+
 .film-poster .film-poster-img {
   position: absolute;
   top: 0;
@@ -184,7 +219,7 @@ body {
   cursor: pointer;
 }
 .flw-item .film-poster .film-poster-ahref:before {
-  content: "";
+  content: '';
   width: 60px;
   height: 60px;
   margin-top: -30px;
@@ -199,7 +234,7 @@ body {
   transition: all 0.5s ease 0s;
 }
 .flw-item .film-poster .film-poster-ahref:after {
-  content: "";
+  content: '';
   position: absolute;
   top: auto;
   right: 0;
@@ -267,7 +302,7 @@ body {
 .clearfix::after {
   display: block;
   clear: both;
-  content: "";
+  content: '';
 }
 
 @media screen and (max-width: 479px) {
@@ -291,7 +326,7 @@ body {
   transition: all 0.5s ease 0s;
 }
 .fa {
-  font-family: "Font Awesome 5 Free";
+  font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   display: inline-block;
   font-style: normal;
@@ -430,13 +465,6 @@ body {
 
 /*form*/
 
-.testbox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: inherit;
-  padding: 20px;
-}
 form {
   width: 100%;
   padding: 20px;
@@ -447,7 +475,8 @@ form {
 .banner {
   position: relative;
   height: 210px;
-  background-image: url("https://limitpointstore.com/products/addmovie/images/addmovieicon.png");
+  background-position: center;
+  background-image: url('https://limitpointstore.com/products/addmovie/images/addmovieicon.png');
   background-size: contain;
   background-repeat: no-repeat;
   display: flex;
@@ -455,13 +484,37 @@ form {
   align-items: center;
   text-align: center;
 }
+
+.banner1 {
+  position: relative;
+  height: 210px;
+  background-position: center;
+  background-image: url('https://play-lh.googleusercontent.com/sNFqQ24u2si6bJ_TmBAlbdFqzYW1zJNX3rGFnsD_QH71SoLQ6qjwv-XaaV_UBUpLpQ');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.banner1::after,
 .banner::after {
-  content: "";
+  content: '';
   background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   width: 100%;
   height: 100%;
 }
+
+.testbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  padding: 20px;
+}
+
 input,
 select,
 textarea {
@@ -508,8 +561,8 @@ a {
   z-index: 1;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
+input[type='radio'],
+input[type='checkbox'] {
   display: none;
 }
 label.radio,
@@ -531,7 +584,7 @@ span.required {
 }
 label.radio:before,
 label.check:before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
 }
@@ -548,7 +601,7 @@ label.check:before {
   border-radius: 2px;
   border: 1px solid #095484;
 }
-input[type="checkbox"]:checked + .check:before {
+input[type='checkbox']:checked + .check:before {
   background: #095484;
 }
 label.radio:after {
@@ -561,7 +614,7 @@ label.check:after {
 }
 label.radio:after,
 label.check:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 6px;
   width: 8px;
@@ -572,8 +625,8 @@ label.check:after {
   transform: rotate(-45deg);
   opacity: 0;
 }
-input[type="radio"]:checked + label:after,
-input[type="checkbox"]:checked + label:after {
+input[type='radio']:checked + label:after,
+input[type='checkbox']:checked + label:after {
   opacity: 1;
 }
 .btn-block {
@@ -619,7 +672,7 @@ button:hover {
   font-family: sans-serif;
 }
 .contact-header {
-  background-image: url("https://marmm.com/wp-content/uploads/2018/05/contact-background@2x-2.jpg");
+  background-image: url('https://marmm.com/wp-content/uploads/2018/05/contact-background@2x-2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -745,7 +798,7 @@ button:hover {
 }
 
 .contact .php-email-form .loading:before {
-  content: "";
+  content: '';
   display: inline-block;
   border-radius: 50%;
   width: 24px;
@@ -780,7 +833,7 @@ button:hover {
   padding: 10px 15px;
 }
 
-.contact .php-email-form button[type="submit"] {
+.contact .php-email-form button[type='submit'] {
   background: #149ddd;
   border: 0;
   padding: 10px 24px;
@@ -789,7 +842,7 @@ button:hover {
   border-radius: 4px;
 }
 
-.contact .php-email-form button[type="submit"]:hover {
+.contact .php-email-form button[type='submit']:hover {
   background: #37b3ed;
 }
 
